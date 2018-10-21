@@ -836,6 +836,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="loadCryptotext:" target="XfG-lQ-9wD" id="1zm-vU-kUM"/>
+                                </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qq4-Lb-n8a">
                                 <rect key="frame" x="360" y="598" width="130" height="22"/>
@@ -862,10 +865,15 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="proceedCryptotext:" target="XfG-lQ-9wD" id="Xpx-eS-8oH"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="cryptotextField" destination="I3v-dD-qPe" id="KwG-am-SIN"/>
+                        <outlet property="keyLength" destination="qq4-Lb-n8a" id="o72-dA-wna"/>
                         <outlet property="statisticTable" destination="kJN-OM-7dT" id="hFH-wa-SHT"/>
                         <outlet property="textField" destination="I3v-dD-qPe" id="MWy-gD-IBV"/>
                     </connections>

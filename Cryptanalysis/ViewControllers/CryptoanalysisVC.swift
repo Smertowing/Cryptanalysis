@@ -10,7 +10,8 @@ import Cocoa
 
 class CryptoanalysisVC: ViewController {
 
-    @IBOutlet var textField: NSTextView!
+    @IBOutlet weak var keyLength: NSTextField!
+    @IBOutlet weak var cryptotextField: NSTextView!
     @IBOutlet weak var statisticTable: NSTableView!
     
     override func viewDidLoad() {
@@ -18,4 +19,9 @@ class CryptoanalysisVC: ViewController {
         // Do view setup here.
     }
     
+    @IBAction func loadCryptotext(_ sender: Any) {
+    }
+    
+    @IBAction func proceedCryptotext(_ sender: Any) {
+    }
 }
