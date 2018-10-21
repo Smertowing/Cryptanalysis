@@ -42,11 +42,11 @@ class CryptoanalysisVC: ViewController {
             return
         }
         
+        let crypto = Cryptoanalysis(forText: cryptotextInRussian, withKeyLenght: keySize)
+        cryptotextField.stringValue.append(crypto.getTable())
+        
         
     }
-    
-    
-    
     
     @IBAction func loadCryptotext(_ sender: Any) {
         cryptotextField.stringValue = openFile()
