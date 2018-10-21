@@ -16,6 +16,7 @@ extension NSViewController {
         browse.showsHiddenFiles        = false
         browse.canCreateDirectories    = true
         browse.allowsMultipleSelection = false
+        browse.allowedFileTypes = ["txt"]
         
         if (browse.runModal() == NSApplication.ModalResponse.OK) {
             let result = browse.url
@@ -36,20 +37,19 @@ extension NSViewController {
     }
 }
 
+
+
 class ViewController: NSViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+    
+    func openFile() -> String  {
+        let filePath = browseFile()
+        do {
+            return try String(contentsOfFile: filePath)
+        } catch {
+            return ""
         }
     }
 
-
 }
+
 

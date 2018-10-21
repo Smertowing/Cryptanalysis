@@ -8,6 +8,7 @@
 
 import Foundation
 
+let russianAlphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
 let russianAlphabetFrequency:[Character: Double] = ["А" : 7.51,
                                                     "Б" : 1.75,
                                                     "В" : 4.53,
