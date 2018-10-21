@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F34F543A217CD83F004CF2F7 /* FrequencyStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34F5439217CD83F004CF2F7 /* FrequencyStatistic.swift */; };
+		F34F543C217CE714004CF2F7 /* CryptoanalysisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34F543B217CE714004CF2F7 /* CryptoanalysisVC.swift */; };
 		F3EC0E95217CD14300FDB55B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EC0E94217CD14300FDB55B /* AppDelegate.swift */; };
 		F3EC0E97217CD14300FDB55B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EC0E96217CD14300FDB55B /* ViewController.swift */; };
 		F3EC0E99217CD14500FDB55B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3EC0E98217CD14500FDB55B /* Assets.xcassets */; };
 		F3EC0E9C217CD14500FDB55B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3EC0E9A217CD14500FDB55B /* Main.storyboard */; };
+		F3EC0EA5217CD19A00FDB55B /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EC0EA4217CD19A00FDB55B /* Algorithm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F34F5439217CD83F004CF2F7 /* FrequencyStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyStatistic.swift; sourceTree = "<group>"; };
+		F34F543B217CE714004CF2F7 /* CryptoanalysisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoanalysisVC.swift; sourceTree = "<group>"; };
 		F3EC0E91217CD14300FDB55B /* Cryptanalysis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptanalysis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3EC0E94217CD14300FDB55B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3EC0E96217CD14300FDB55B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -21,6 +26,7 @@
 		F3EC0E9B217CD14500FDB55B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3EC0E9D217CD14500FDB55B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3EC0E9E217CD14500FDB55B /* Cryptanalysis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cryptanalysis.entitlements; sourceTree = "<group>"; };
+		F3EC0EA4217CD19A00FDB55B /* Algorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +60,32 @@
 			isa = PBXGroup;
 			children = (
 				F3EC0E94217CD14300FDB55B /* AppDelegate.swift */,
-				F3EC0E96217CD14300FDB55B /* ViewController.swift */,
+				F3EC0EA7217CD1B300FDB55B /* ViewControllers */,
+				F3EC0EA6217CD1A100FDB55B /* Model */,
 				F3EC0E98217CD14500FDB55B /* Assets.xcassets */,
 				F3EC0E9A217CD14500FDB55B /* Main.storyboard */,
 				F3EC0E9D217CD14500FDB55B /* Info.plist */,
 				F3EC0E9E217CD14500FDB55B /* Cryptanalysis.entitlements */,
 			);
 			path = Cryptanalysis;
+			sourceTree = "<group>";
+		};
+		F3EC0EA6217CD1A100FDB55B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3EC0EA4217CD19A00FDB55B /* Algorithm.swift */,
+				F34F5439217CD83F004CF2F7 /* FrequencyStatistic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3EC0EA7217CD1B300FDB55B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3EC0E96217CD14300FDB55B /* ViewController.swift */,
+				F34F543B217CE714004CF2F7 /* CryptoanalysisVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3EC0E97217CD14300FDB55B /* ViewController.swift in Sources */,
+				F34F543A217CD83F004CF2F7 /* FrequencyStatistic.swift in Sources */,
+				F3EC0EA5217CD19A00FDB55B /* Algorithm.swift in Sources */,
+				F34F543C217CE714004CF2F7 /* CryptoanalysisVC.swift in Sources */,
 				F3EC0E95217CD14300FDB55B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
