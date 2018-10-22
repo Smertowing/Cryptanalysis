@@ -25,15 +25,6 @@ extension String {
     }
 }
 
-extension Character {
-    var asciiValue: Int {
-        get {
-            let s = String(self).unicodeScalars
-            return Int(s[s.startIndex].value)
-        }
-    }
-}
-
 class Cryptoanalysis {
     
     var text: String
@@ -72,13 +63,14 @@ class Cryptoanalysis {
         
     func getTable() -> String {
         let tableOfFrequencies = self.getFrequency()
-        var result = "\n"
+        var result = ""
         for letter in 0..<key {
-            result.append("\n \n For letter number \(letter) in key\n")
+            result.append("For letter number \(letter) in key: \n")
             for dict in tableOfFrequencies[letter] {
                 let value = String(format: "%.2f", dict.value)
                 result.append("\(dict.key) - \(value) \n")
             }
+            result.append("\n")
         }
         return result
     }
