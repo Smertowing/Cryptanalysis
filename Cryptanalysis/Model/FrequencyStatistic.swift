@@ -42,3 +42,5 @@ let russianAlphabetFrequency:[Character: Double] = ["А" : 7.51,
                                                     "Э" : 0.32,
                                                     "Ю" : 0.73,
                                                     "Я" : 2.12]
+
+let russianAlphabetFrequencySorted = russianAlphabetFrequency.sorted { $0.value > $1.value }
