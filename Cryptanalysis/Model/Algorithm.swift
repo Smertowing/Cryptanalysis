@@ -29,6 +29,7 @@ class Cryptoanalysis {
     
     var text: String
     var key: Int
+    var alreadyUsed: [Character] = []
     
     init(forText cryptotext: String, withKeyLenght keyLength: Int ) {
         self.text = cryptotext.uppercased().filter { return russianAlphabet.contains($0) }
@@ -68,17 +69,19 @@ class Cryptoanalysis {
         var diff:Double = 100
         var char: Character = " "
         for i in russianAlphabetFrequency {
-            if abs(portion - i.value) < diff {
+            if (abs(portion - i.value) < diff) && !(alreadyUsed.contains(i.key)) {
                 diff = abs(portion - i.value)
                 char = i.key
             }
         }
+        alreadyUsed.append(char)
         return char
     }
     
     func getTableParallel(table: [[Character: Double]]) -> [[Character: Character]] {
         var parallel: [[Character: Character]] = []
         for i in 0..<key {
+            alreadyUsed = []
             var dictionaryOfMatching: [Character: Character] = [:]
             for dict in table[i] {
                 dictionaryOfMatching[dict.key] = getMostAccuracyChar(for: dict.value)
