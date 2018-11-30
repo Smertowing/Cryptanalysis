@@ -15,6 +15,13 @@ extension String {
 }
 
 extension String {
+    func indexDistanceOfFirst(character: Character) -> Int? {
+        guard let index = self.firstIndex(of: character) else { return nil }
+        return self.distance(from: self.startIndex, to: index)
+    }
+}
+
+extension String {
     func get(indextOf c: Character) -> Int? {
         for i in 0..<self.count {
             if self[i] == c {
@@ -29,7 +36,6 @@ class Cryptoanalysis {
     
     var text: String
     var key: Int
-    var alreadyUsed: [Character] = []
     
     init(forText cryptotext: String, withKeyLenght keyLength: Int ) {
         self.text = cryptotext.uppercased().filter { return russianAlphabet.contains($0) }
@@ -69,22 +75,43 @@ class Cryptoanalysis {
         var diff:Double = 100
         var char: Character = " "
         for i in russianAlphabetFrequency {
-            if (abs(portion - i.value) < diff) && !(alreadyUsed.contains(i.key)) {
+            if (abs(portion - i.value) < diff) {
                 diff = abs(portion - i.value)
                 char = i.key
             }
         }
-        alreadyUsed.append(char)
         return char
     }
     
+    func getOffset(forTable table: [[Character: Double]]) -> [Int] {
+        var result = [Int]()
+        for numKey in table {
+            var max: Double = 0
+            var maxsymb: Character = "А"
+            for char in numKey {
+                if char.value > max {
+                    max = char.value
+                    maxsymb = char.key
+                }
+            }
+            let tempChar = getMostAccuracyChar(for: max)
+            result.append((russianAlphabet.indexDistanceOfFirst(character: tempChar)! - russianAlphabet.indexDistanceOfFirst(character: maxsymb)! + russianAlphabet.count) % russianAlphabet.count)
+        }
+        return result
+    }
+    
+    func getSymbol(_ char: Character, withOffset offset: Int) -> Character{
+        return russianAlphabet[(russianAlphabet.indexDistanceOfFirst(character: char)! + offset) % russianAlphabet.count]
+    }
+    
     func getTableParallel(table: [[Character: Double]]) -> [[Character: Character]] {
+        let offsets: [Int] = getOffset(forTable: table)
+        
         var parallel: [[Character: Character]] = []
         for i in 0..<key {
-            alreadyUsed = []
             var dictionaryOfMatching: [Character: Character] = [:]
             for dict in table[i] {
-                dictionaryOfMatching[dict.key] = getMostAccuracyChar(for: dict.value)
+                dictionaryOfMatching[dict.key] = getSymbol(dict.key, withOffset: offsets[i])
             }
             parallel.append(dictionaryOfMatching)
         }
