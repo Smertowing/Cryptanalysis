@@ -9,6 +9,7 @@
 import Cocoa
 
 extension NSViewController {
+    
     func browseFile() -> String {
         let browse = NSOpenPanel();
         browse.title                   = "Choose a file"
@@ -17,7 +18,7 @@ extension NSViewController {
         browse.canCreateDirectories    = true
         browse.allowsMultipleSelection = false
         browse.allowedFileTypes = ["txt"]
-        
+
         if (browse.runModal() == NSApplication.ModalResponse.OK) {
             let result = browse.url
             if (result != nil) {
